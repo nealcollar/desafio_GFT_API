@@ -1,6 +1,6 @@
-# Desafio GFT WEB
+# Desafio GFT API
 
-Projeto destinado à criação das automações de WEB que o __Desafio da GFT__ utiliza para avaliar seus candidatos.
+Projeto destinado à criação das automações de API que o __Desafio da GFT__ utiliza para avaliar seus candidatos.
 
 Neste documento falaremos sobre o projeto como um todo, desde as arquiteturas que temos até as configurações iniciais para rodar o projeto na sua máquina.
 
@@ -81,7 +81,7 @@ Neste documento falaremos sobre o projeto como um todo, desde as arquiteturas qu
 
 2. Clonando projeto:
 
-    * acessar gitlab: https://github.com/nealcollar/desafio_GFT_WEB
+    * acessar gitlab: https://github.com/nealcollar/desafio_GFT_API
 
 
 3. Configurando o projeto
@@ -95,12 +95,12 @@ Neste documento falaremos sobre o projeto como um todo, desde as arquiteturas qu
 
           cmd
           ~~~cmd
-          .\venv-web\Scripts\activate.bat
+          .\venv\Scripts\activate.bat
           ~~~
 
           powershel
           ~~~powershell
-           .\venv-web\Scripts\Activate.ps1 
+           .\venv\Scripts\Activate.ps1 
            ~~~
 
     * Instalando Dependencias do projeto
@@ -120,7 +120,7 @@ Neste documento falaremos sobre o projeto como um todo, desde as arquiteturas qu
         ```
         {
             "robotcode.robot.variables": {
-                "ROOT": "PATH_ate_a_sua_pasta_do_projeto\\DESAFIO_GFT_WEB",
+                "ROOT": "PATH_ate_a_sua_pasta_do_projeto\\DESAFIO_GFT_API",
                 "ENV": "LOCAL",
                 "LOG_LEVEL": "TRACE"
             }
@@ -130,7 +130,7 @@ Neste documento falaremos sobre o projeto como um todo, desde as arquiteturas qu
 4. Validando instalação
     * No Vs code com o projeto e venv abertos rodar o comando: 
         ```
-        poetry run web
+        poetry run api
         ```
 
 # Testar em ambiente Linux
@@ -138,14 +138,14 @@ Neste documento falaremos sobre o projeto como um todo, desde as arquiteturas qu
 ### Para rodar em ambiente linux localemnte precisa seguir os seguintes passos:
    * Instalar o Docker Desktop, basta clicar no [link da pagina](https://www.docker.com/products/docker-desktop/).
    * Após instalar o Docker Desktop, basta iniciar ele.
-   * Agora com o docker instalado abra um terminal dentro do diretorio do projeto `path_até_o_projeto/DESAFIO_GFT_WEB`
+   * Agora com o docker instalado abra um terminal dentro do diretorio do projeto `path_até_o_projeto/DESAFIO_GFT_API`
    * Com o terminal aberto no diretório do projeto digite o seguinte comando:
         ```
-        docker build -t image-web .
+        docker build -t image-api .
         ```
    * Aguarde o build da imagem ser finalizado, após ele ser finalizado vá para o terminal e digite o seguinte comando:
         ````
-        docker run -it -v %cd%/result_container:/web-automation/results image-web
+        docker run -it -v %cd%/result_container:/api-automation/results image-api
         ````
-   * Esse comando vai executar a o container em linux para rodar o projeto WEB e assim gerar um repot que vai ser exportado para a pasta
+   * Esse comando vai executar a o container em linux para rodar o projeto API e assim gerar um repot que vai ser exportado para a pasta
     `./result_container` no **diretório do seu projeto**.
