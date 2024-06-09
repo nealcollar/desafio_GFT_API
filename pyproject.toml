@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "desafio-GFT-api"
+version = "0.1.0"
+description = "Dessafio API da GFT"
+authors = ["Augusto Cesar Pupo Vieira <augusto.vieira@hotmail.com.br>"]
+readme = "README.md"
+packages = [{include = "run_tests.py"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+robotframework-faker = "^5.0.0"
+robotframework = "^7.0"
+robotframework-requests = "^0.9.7"
+pytz = "^2024.1"
+pyyaml = "^6.0.1"
+robotframework-jsonlibrary = "^0.5"
+
+[tool.poetry.dev-dependencies]
+robotframework-debuglibrary = "^2.3.0"
+
+[tool.poetry.scripts]
+api = "run_tests:robot_local_exe"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

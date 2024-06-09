@@ -1,0 +1,7 @@
+/results/*
+/*venv*/*
+**.html
+/.vscode/
+**.lock
+*cache*
+export_output_folder.sh
